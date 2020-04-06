@@ -31,6 +31,7 @@ body {
     line-height: 1.7;
     color: #808080;
     padding: 3rem;
+    box-sizing: border-box;
     background: radial-gradient(
     rgba(17, 198, 213, 0.25),
     rgba(46, 144, 180, 0.15));
@@ -87,7 +88,7 @@ body {
     text-align: center;
 }
 
-.profileHeader__headingPrimary {
+.headingPrimary {
     color: #f8f8ff;
     text-align: center;
     text-shadow: -0.1rem 0 black, 0 0.1rem black, 0.1rem 0 black, 0 -0.1rem black;
@@ -95,7 +96,7 @@ body {
     margin-bottom: 0.5rem;
 }
 
-.profileHeader__headingPrimaryMain {
+.headingPrimary--main {
     display: block;
     font-size: 5.5rem;
     font-weight: 700;
@@ -107,11 +108,11 @@ body {
     /*animation-iteration-count: 3;*/
 }
 
-.profileHeader__headingPrimarySubtitle {
+.headingPrimary--sub {
     display: block;
     font-size: 3rem;
     font-weight: 400;
-    letter-spacing: 5rem;
+    letter-spacing: 0.5rem;
     animation-name: moveInBottomRight;
     animation-duration: 1s;
 }
@@ -213,7 +214,7 @@ body {
     }
 }
 
-.viewResume:link, .viewResume:visited {
+.btn:link, .btn:visited {
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
@@ -230,24 +231,24 @@ body {
 
 }
 
-.viewResume:hover {
+.btn:hover {
     transform: translateY(-0.4rem);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
 }
 
-.viewResume:active {
+.btn:active {
     transform: translateY(-0.2rem);
     box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.3);
 
 }
 
-.btn-white {
+.btn--white {
     color: #2E90B4;
     /*background: linear-gradient(to right bottom,#093028, #43C6AC,  #F8FFAE) ;*/
     background-color: ghostwhite;
 }
 
-.viewResume::after {
+.btn::after {
     content: "";
     display: inline-block;
     height: 100%;
@@ -260,18 +261,18 @@ body {
     transition: all 0.5s;
 }
 
-.btn-white::after {
+.btn--white::after {
     /*background: linear-gradient(to right bottom,#093028, #43C6AC,  #F8FFAE) ;*/
     background-color: ghostwhite;
 
 }
 
-.viewResume:hover::after {
+.btn:hover::after {
     transform: scaleX(1.5) scaleY(1.2);
     opacity: 0;
 }
 
-.viewResume-animated {
+.btn--animated {
     animation-name: moveInLeft;
     animation-duration: 1s;
     animation-timing-function: ease-out;
