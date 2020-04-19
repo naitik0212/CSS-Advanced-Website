@@ -1,0 +1,42 @@
+/* Using inheritance of CSS */
+body {
+  font-family: Lato, monospace;
+  font-weight: 400;
+  /*font-size: 120%;*/
+  line-height: 1.7;
+  color: $font-color;
+  padding: 3rem;
+  background: radial-gradient(
+                  rgba($background-color-light, 0.25),
+                  rgba($background-color-dark, 0.15));
+}
+
+
+.headingPrimary {
+  color: $background-white;
+  text-align: center;
+  text-shadow: -0.1rem 0 color-black, 0 0.1rem color-black, 0.1rem 0 color-black, 0 -0.1rem color-black;
+  backface-visibility: hidden; /*Is the backpart of the element is visible or hidden for the user */
+  margin-bottom: 0.5rem;
+
+  &--main {
+    display: block;
+    font-size: 5.5rem;
+    font-weight: 700;
+    letter-spacing: 1.5rem;
+    animation-name: moveInTopLeft;
+    animation-timing-function: ease-in;
+    animation-duration: 1s;
+    /*animation-delay: 2s;*/
+    /*animation-iteration-count: 3;*/
+  }
+
+  &--sub {
+    display: block;
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: 0.5rem;
+    animation-name: moveInBottomRight;
+    animation-duration: 1s;
+  }
+}
