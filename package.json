@@ -1,0 +1,29 @@
+{
+  "name": "profile",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass scss/_master_style.scss css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naitik0212/CSS-Advanced-Website.git"
+  },
+  "keywords": [
+    "Profile",
+    "page"
+  ],
+  "author": "Naitik Shah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/naitik0212/CSS-Advanced-Website/issues"
+  },
+  "homepage": "https://github.com/naitik0212/CSS-Advanced-Website#readme",
+  "devDependencies": {
+    "node-sass": "^4.13.1"
+  },
+  "dependencies": {
+    "sass": "^1.26.3"
+  }
+}
