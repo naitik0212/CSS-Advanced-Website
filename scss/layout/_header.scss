@@ -1,0 +1,52 @@
+
+
+/*Viewport height*/
+
+.profileHeader {
+  /* 95% of the viewport */
+  height: 95vh;
+  background: linear-gradient(to right bottom,
+          rgba($background-color-light, 0.35),
+          rgba($background-color-dark, 0.4),
+          rgba(255, 255, 255, 0.5)),
+  url(../img/profile_photo.JPG) center;
+  background-size: cover;
+  /*Coordinates of polygon: top left, top right, bottom right, bottom left*/
+  clip-path: polygon(0% 15%, 0 0, 15% 0%, 85% 0%, 100% 0, 100% 15%, 100% 85%, 70% 85%, 65% 100%, 35% 100%, 30% 85%, 0% 85%);
+  position: relative;
+  border-radius: 1.5rem;
+
+
+  &__logoBox {
+    position: absolute;
+    left: 2rem;
+    top: 2rem;
+  }
+
+  &__logo {
+    height: 4rem;
+    animation-name: moveInRight;
+    animation-duration: 1.2s;
+  }
+
+  /*.profileHeader__logo:hover{*/
+  /*animation-name: smallMoveInRight;*/
+  /*animation-duration: 1s;*/
+
+  /*}*/
+
+  /*.profileHeader__logo:hover::after {*/
+  /*animation-name: smallMoveInLeft;*/
+  /*animation-duration: 1s;*/
+
+
+  /*}*/
+
+  &__textBox {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}

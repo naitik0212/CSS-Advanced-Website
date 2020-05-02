@@ -1,0 +1,64 @@
+.btn {
+  &:link, &:visited {
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1rem 5rem;
+    display: inline-block;
+    border-radius: 15rem;
+    /*border: outset black;*/
+    transition: all 0.3s;
+    text-shadow: -0.05rem 0 color-black, 0 0.05rem color-black, 0.05rem 0 color-black, 0 -0.05rem color-black;
+    letter-spacing: 0.5rem;
+    font-weight: bold;
+    font-size: 2.2rem;
+    position: relative;
+
+  }
+
+  &:hover {
+    transform: translateY(-0.4rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+    &:after {
+      transform: scaleX(1.5) scaleY(1.2);
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    transform: translateY(-0.2rem);
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.3);
+
+  }
+
+  &:after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 15rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.5s;
+  }
+
+  &--white {
+    color: $background-color-dark;
+    /*background: linear-gradient(to right bottom,#093028, #43C6AC,  #F8FFAE) ;*/
+    background-color: $background-white;
+    &:after {
+      /*background: linear-gradient(to right bottom,#093028, #43C6AC,  #F8FFAE) ;*/
+      background-color: $background-white;
+    }
+  }
+
+  &--animated {
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: backwards;
+    animation-delay: 1.2s;
+  }
+}
