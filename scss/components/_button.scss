@@ -11,7 +11,7 @@
     text-shadow: -0.05rem 0 $color-black, 0 0.05rem $color-black, 0.05rem 0 $color-black, 0 -0.05rem $color-black;
     letter-spacing: 0.5rem;
     font-weight: bold;
-    font-size: 2.2rem;
+    font-size: $default-font-size;
     position: relative;
 
   }
@@ -60,5 +60,30 @@
     animation-timing-function: ease-out;
     animation-fill-mode: backwards;
     animation-delay: 1.2s;
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+    font-size: $default-font-size;
+    color: $background-color-light;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $background-color-light;
+    padding: 0.3rem;
+    transition: all 0.2s;
+  }
+
+  &:hover {
+    background-color: $background-color-light;
+    color: $background-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+    transform: translateY(-0.3rem);
+  }
+
+  &:active {
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.15);
+    transform: translateY(0rem);
   }
 }
