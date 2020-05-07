@@ -2,7 +2,6 @@
   @include clearfix();
   max-width: $grid-width;
   // Width vs max width => if available width, it works normally, if less then that it would fill all the space in viewport
-  background-color: $color-dull-white;
   margin: 0 auto;
 
   &:not(:last-child){
@@ -13,7 +12,6 @@
   // end with => $
   // all that has => *
   [class^="col-"]{
-    background-color: $background-color-light;
     float: left;
 
     &:not(:last-child){

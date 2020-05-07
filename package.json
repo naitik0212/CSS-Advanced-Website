@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "live-server": "^1.2.1",
+    "prettier": "^2.0.5",
     "sass": "^1.26.3"
   }
 }
