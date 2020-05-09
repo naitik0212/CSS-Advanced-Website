@@ -24,5 +24,6 @@
 
   &__test{
     @include clearfix();
+    backface-visibility: hidden;
   }
 }
