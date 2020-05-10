@@ -1,0 +1,100 @@
+.form{
+  &__group:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+
+  &__input {
+    font-size: $default-font-size;
+    padding: 1.5rem 2rem;
+    border-radius: 0.3rem;
+    background-color: rgba($color-white, 0.5);
+    font-family: inherit;
+    color: inherit;
+    border: none;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.1);
+    border-bottom: 0.3rem solid transparent;
+    width: 90%;
+    display: block;
+    transition: all 0.3s;
+
+
+
+    &:focus{
+      outline: none;
+      box-shadow: 0 1.5rem 4rem rgba($color-black, 0.3);
+      border-bottom: 0.3rem solid $background-color-light;
+
+      &:invalid {
+        border-bottom: 0.3rem solid $color-error;
+      }
+    }
+
+    &::-webkit-input-placeholder {
+      color: $color-grey-dark-1;
+    }
+  }
+
+  &__label {
+    font-size: $default-font-size;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    display: block;
+    transition: all 0.3s;
+  }
+
+  // Adjacent sibblings
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+
+  &__radio-group {
+    width: 49%;
+    display: inline-block;
+  }
+
+  &__radio-input {
+    // it breaks ADA compliant.
+    display: none;
+  }
+
+  &__radio-label {
+    font-size: $default-font-size;
+    cursor: pointer;
+    position: relative;
+    padding-left: 4rem;
+  }
+
+  &__radio-button {
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid $background-color-light;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: -0.4rem;
+    transition: all 0.3s;
+
+    &::after {
+      height: 1.2rem;
+      width: 1.2rem;
+      content: "";
+      border-radius: 50%;
+      position: absolute;
+      display: block;
+      top:50%;
+      left: 50%;
+      background-color: $background-color-light;
+      transform: translate(-50%,-50%);
+      opacity: 0;
+    }
+  }
+
+  &__radio-input:checked ~ &__radio-label &__radio-button::after {
+    opacity: 1;
+  }
+
+}
