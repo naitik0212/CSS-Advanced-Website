@@ -73,6 +73,10 @@ body {
     opacity: 1;
     transform: translate(0, 0); } }
 
+@keyframes type {
+  from {
+    width: 0; } }
+
 /* Using inheritance of CSS */
 body {
   font-family: Lato, monospace;
@@ -126,7 +130,7 @@ body {
   letter-spacing: 0.3rem;
   transition: all 0.3s; }
   .heading-secondary:hover {
-    transform: skewX(5deg) skewY(5deg) scale(1.2);
+    transform: skewX(2deg) skewY(1deg) scale(1.1);
     text-shadow: 0.5rem 1rem 1rem rgba(0, 0, 0, 0.3); }
 
 .heading-tertiary {
@@ -546,6 +550,45 @@ body {
 
 .form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
   opacity: 1; }
+
+.footer {
+  background-color: #333;
+  padding: 2rem 0;
+  font-size: 1.2rem;
+  color: #f7f7f7; }
+  .footer__logo-box {
+    text-align: center;
+    padding: 5rem 0; }
+  .footer__logo {
+    width: 15rem;
+    height: auto; }
+  .footer__navigation {
+    border-top: 1px solid #f7f7f7;
+    padding-top: 1rem;
+    display: inline-block; }
+  .footer__list {
+    list-style: none; }
+  .footer__item {
+    display: inline-block; }
+    .footer__item:not(:last-child) {
+      margin-right: 1.5rem; }
+  .footer__link:link, .footer__link:visited {
+    color: #f7f7f7;
+    background-color: #333;
+    text-transform: uppercase;
+    display: inline-block;
+    text-decoration: none;
+    transition: all 0.2s; }
+  .footer__link:hover, .footer__link:active {
+    color: #00d2ff;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.8);
+    transform: rotate(1deg) scale(1.2); }
+  .footer__copyright {
+    border-top: 1px solid #f7f7f7;
+    padding-top: 1rem;
+    display: inline-block;
+    width: 80%;
+    float: right; }
 
 /*Viewport height*/
 .profileHeader {
