@@ -261,7 +261,7 @@
 
     <section class="section-stories">
         <div class="bg-video">
-            <video class="bg-video__content" autoplay muted loop>
+            <video autoplay class="bg-video__content" loop muted>
                 <source src="img/video.mp4" type="video/mp4" >
                 <source src="img/video.webm" type="video/webm" >
                 Your browser is not supported for this background video!
@@ -309,7 +309,57 @@
         </div>
 
         <div class="u-center-text u-margin-bottom-l">
-            <a href="#" class="btn-text">Read all stories &rarr;</a>
+            <a class="btn-text" href="#">Read all stories &rarr;</a>
+        </div>
+    </section>
+
+    <section class="section-book">
+        <div class="row">
+            <div class="book">
+                <div class="book__form">
+                    <form action="#" class="form">
+                        <div class="u-center-text u-margin-bottom-s">
+                            <h2 class="heading-secondary">
+                               Register Now
+                            </h2>
+                        </div>
+
+                        <div class="form__group">
+                            <input class="form__input" id="fullName" placeholder="Full Name" required type="text">
+                            <label class="form__label" for="fullName"> Full Name</label>
+                        </div>
+
+                        <div class="form__group">
+                            <input class="form__input" id="email" placeholder="Email Address" required type="email">
+                            <label class="form__label" for="email">Email Address</label>
+                        </div>
+
+                        <div class="form__group">
+                            <div class="form__radio-group u-margin-bottom-s">
+                                <input class="form__radio-input" id = "small" name="size" type="radio">
+                                <label class="form__radio-label" for="small">
+                                    <span tabindex="0" class="form__radio-button">
+                                    </span>                                        Small group
+
+                                </label>
+                            </div>
+                            <div class="form__radio-group u-margin-bottom-s">
+                                <input class="form__radio-input" id = "large" name="size" type="radio">
+                                <label class="form__radio-label" for="large">
+                                    <span tabindex="0" class="form__radio-button">
+                                    </span>
+                                        Large group
+
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form__group">
+                            <button class="btn btn--blue">Next Step &rarr;</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
         </div>
     </section>
 </main>
