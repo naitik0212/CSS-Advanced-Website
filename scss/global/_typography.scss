@@ -80,3 +80,16 @@ body {
     margin-bottom: 3rem;
   }
 }
+
+.heading-quaternary {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.paragraph {
+  font-size: 1.2rem;
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
