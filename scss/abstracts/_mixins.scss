@@ -12,3 +12,54 @@
   left:50%;
   transform: translate(-50%,-50%);
 }
+
+// Media Query Manager
+/*
+0 - 600px : phone
+600px-900px:tablet in potrait mode
+900-1200px: tablet in landscape
+[1200-1800]: normal styles.
+1800+: Big desktop
+
+
+@mixin respond-phone() {
+  @media(max-width: 600px)
+    {
+    @content
+    }
+}
+
+Breakpoint choices -- Phone/Tab-port/Tab-land/big-desktop
+
+ 1em = 16px (default from browsers)
+ rems fail to run at some times, so em are best option to use media queries
+*/
+
+@mixin respond($breakpoint) {
+  @if($breakpoint == phone) {
+      @media(max-width: 37.5em) // 600px
+      {
+        @content
+      }
+  } @if($breakpoint == tab-port) {
+      @media(max-width: 56.25em) // 900px
+      {
+        @content
+      }
+  } @if($breakpoint == tab-land) {
+      @media(max-width: 75em) //1200px
+      {
+        @content
+      }
+  }@if($breakpoint == desktop) {
+      @media(max-width: 112.5em) //1800px
+      {
+        @content
+      }
+  } @if($breakpoint == big-desktop) {
+      @media(min-width: 112.5em)
+      {
+        @content
+      }
+  }
+}

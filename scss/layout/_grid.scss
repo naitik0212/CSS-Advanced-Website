@@ -4,8 +4,24 @@
   // Width vs max width => if available width, it works normally, if less then that it would fill all the space in viewport
   margin: 0 auto;
 
+
+  @include respond(tab-port) {
+       max-width: 60rem;
+       padding: 0 3rem;
+
+  }
+
+  @include respond(phone) {
+    max-width: 45rem;
+    padding: 0 1rem;
+  }
+
+
   &:not(:last-child){
     margin-bottom: $gutter-vertical;
+    @include respond(tab-port) {
+      margin-bottom: $gutter-vertical-small;
+    }
   }
 
   // start with => ^
@@ -16,6 +32,14 @@
 
     &:not(:last-child){
       margin-right: $gutter-horizontal;
+      @include respond(tab-port) {
+        margin-right: 0;
+        margin-bottom: $gutter-vertical-small;
+      }
+    }
+
+    @include respond(tab-port) {
+      width: 100% !important;
     }
   }
 

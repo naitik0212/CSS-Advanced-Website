@@ -1,3 +1,23 @@
+/*
+0 - 600px : phone
+600px-900px:tablet in potrait mode
+900-1200px: tablet in landscape
+[1200-1800]: normal styles.
+1800+: Big desktop
+
+
+@mixin respond-phone() {
+  @media(max-width: 600px)
+    {
+    @content
+    }
+}
+
+Breakpoint choices -- Phone/Tab-port/Tab-land/big-desktop
+
+ 1em = 16px (default from browsers)
+ rems fail to run at some times, so em are best option to use media queries
+*/
 /*Universal Selector -- Selects each and every element in a page and applies them with this base rule.*/
 *,
 *::before,
@@ -9,9 +29,35 @@
 
 html {
   font-size: 62.5%; }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+  @media (max-width: 112.5em) {
+    html {
+      font-size: 62.5%; } }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (max-width: 37.5em) {
+    html {
+      font-size: 45%; } }
 
 body {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  padding: 2rem;
+  /* Using inheritance of CSS */
+  font-family: Lato, monospace;
+  font-weight: 400;
+  /*font-size: 120%;*/
+  line-height: 1.7;
+  color: #808080;
+  background: radial-gradient(rgba(0, 210, 255, 0.4), rgba(44, 62, 80, 0.2)); }
+  @media (max-width: 56.25em) {
+    body {
+      padding: 0; } }
 
 @keyframes moveInTopLeft {
   0% {
@@ -77,16 +123,6 @@ body {
   from {
     width: 0; } }
 
-/* Using inheritance of CSS */
-body {
-  font-family: Lato, monospace;
-  font-weight: 400;
-  /*font-size: 120%;*/
-  line-height: 1.7;
-  color: #808080;
-  padding: 2rem;
-  background: radial-gradient(rgba(0, 210, 255, 0.25), rgba(44, 62, 80, 0.15)); }
-
 .headingPrimary {
   color: #F8F8FF;
   text-align: center;
@@ -98,12 +134,16 @@ body {
     display: block;
     font-size: 5rem;
     font-weight: 900;
-    letter-spacing: 1.5rem;
+    letter-spacing: 2rem;
     animation-name: moveInTopLeft;
     animation-timing-function: ease-in;
     animation-duration: 1s;
     /*animation-delay: 2s;*/
     /*animation-iteration-count: 3;*/ }
+    @media (max-width: 37.5em) {
+      .headingPrimary--main {
+        letter-spacing: 1rem;
+        font-size: 5rem; } }
   .headingPrimary--sub {
     display: block;
     font-size: 2.5rem;
@@ -111,6 +151,10 @@ body {
     letter-spacing: 0.5rem;
     animation-name: moveInBottomRight;
     animation-duration: 1s; }
+    @media (max-width: 37.5em) {
+      .headingPrimary--sub {
+        letter-spacing: 0.2rem;
+        font-size: 2rem; } }
   .headingPrimary--Secondarysub {
     display: block;
     font-size: 2rem;
@@ -118,6 +162,10 @@ body {
     letter-spacing: 0.5rem;
     animation-name: moveInBottomRight;
     animation-duration: 1s; }
+    @media (max-width: 37.5em) {
+      .headingPrimary--Secondarysub {
+        letter-spacing: 0.2rem;
+        font-size: 1.6rem; } }
 
 .heading-secondary {
   font-size: 3.5rem;
@@ -129,6 +177,12 @@ body {
   color: transparent;
   letter-spacing: 0.3rem;
   transition: all 0.3s; }
+  @media (max-width: 56.25em) {
+    .heading-secondary {
+      font-size: 2.5rem; } }
+  @media (max-width: 37.5em) {
+    .heading-secondary {
+      font-size: 2rem; } }
   .heading-secondary:hover {
     transform: skewX(2deg) skewY(1deg) scale(1.1);
     text-shadow: 0.5rem 1rem 1rem rgba(0, 0, 0, 0.3); }
@@ -137,20 +191,26 @@ body {
   font-size: 1.6rem;
   font-weight: 700;
   text-transform: uppercase; }
+  @media (max-width: 37.5em) {
+    .heading-tertiary {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem; } }
 
 .paragraph {
   font-size: 1.6rem; }
   .paragraph:not(:last-child) {
     margin-bottom: 3rem; }
+    @media (max-width: 37.5em) {
+      .paragraph:not(:last-child) {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem; } }
 
 .heading-quaternary {
   font-size: 1.2rem;
   font-weight: 500; }
-
-.paragraph {
-  font-size: 1.2rem; }
-  .paragraph:not(:last-child) {
-    margin-bottom: 3rem; }
+  @media (max-width: 37.5em) {
+    .heading-quaternary {
+      font-size: 1rem; } }
 
 .u-center-text {
   text-align: center; }
@@ -635,7 +695,7 @@ body {
   /*Coordinates of polygon: top left, top right, bottom right, bottom left*/
   clip-path: polygon(0% 15%, 0 0, 15% 0%, 85% 0%, 100% 0, 100% 15%, 100% 85%, 70% 85%, 65% 100%, 35% 100%, 30% 85%, 0% 85%);
   position: relative;
-  border-radius: 1.5rem;
+  border-radius: 2rem;
   /*.profileHeader__logo:hover{*/
   /*animation-name: smallMoveInRight;*/
   /*animation-duration: 1s;*/
@@ -644,6 +704,12 @@ body {
   /*animation-name: smallMoveInLeft;*/
   /*animation-duration: 1s;*/
   /*}*/ }
+  @media (max-width: 56.25em) {
+    .profileHeader {
+      border-radius: 0; } }
+  @media (max-width: 37.5em) {
+    .profileHeader {
+      clip-path: polygon(0% 0%, 100% 0, 100% 85vh, 0 100%); } }
   .profileHeader__logoBox {
     position: absolute;
     left: 2rem;
@@ -666,12 +732,30 @@ body {
     content: "";
     display: table;
     clear: both; }
+  @media (max-width: 56.25em) {
+    .row {
+      max-width: 60rem;
+      padding: 0 3rem; } }
+  @media (max-width: 37.5em) {
+    .row {
+      max-width: 45rem;
+      padding: 0 1rem; } }
   .row:not(:last-child) {
     margin-bottom: 8rem; }
+    @media (max-width: 56.25em) {
+      .row:not(:last-child) {
+        margin-bottom: 5.5rem; } }
   .row [class^="col-"] {
     float: left; }
     .row [class^="col-"]:not(:last-child) {
       margin-right: 6rem; }
+      @media (max-width: 56.25em) {
+        .row [class^="col-"]:not(:last-child) {
+          margin-right: 0;
+          margin-bottom: 5.5rem; } }
+    @media (max-width: 56.25em) {
+      .row [class^="col-"] {
+        width: 100% !important; } }
   .row .col-1-of-2 {
     width: calc((100% - 6rem)/2); }
   .row .col-1-of-3 {
@@ -687,9 +771,12 @@ body {
 
 .footer {
   background-color: #333;
-  padding: 2rem 0;
+  padding: 5rem 0;
   font-size: 1.2rem;
   color: #f7f7f7; }
+  @media (max-width: 56.25em) {
+    .footer {
+      padding: 2rem 0; } }
   .footer__logo-box {
     text-align: center;
     padding: 5rem 0; }
@@ -700,6 +787,10 @@ body {
     border-top: 1px solid #f7f7f7;
     padding-top: 1rem;
     display: inline-block; }
+    @media (max-width: 56.25em) {
+      .footer__navigation {
+        width: 100%;
+        text-align: center; } }
   .footer__list {
     list-style: none; }
   .footer__item {
@@ -723,6 +814,10 @@ body {
     display: inline-block;
     width: 80%;
     float: right; }
+    @media (max-width: 56.25em) {
+      .footer__copyright {
+        width: 100%;
+        float: none; } }
 
 .navigation__checkbox {
   display: none; }
@@ -732,24 +827,40 @@ body {
   height: 7rem;
   width: 7rem;
   position: fixed;
-  top: 6rem;
-  right: 6rem;
+  top: 5rem;
+  right: 5rem;
   border-radius: 50%;
   z-index: 2000;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5);
   text-align: center;
   cursor: pointer; }
+  @media (max-width: 56.25em) {
+    .navigation__button {
+      top: 3rem;
+      right: 3rem; } }
+  @media (max-width: 37.5em) {
+    .navigation__button {
+      top: 2rem;
+      right: 2rem; } }
 
 .navigation__background {
   height: 6rem;
   width: 6rem;
   border-radius: 50%;
   position: fixed;
-  top: 6.5rem;
-  right: 6.5rem;
+  top: 5.5rem;
+  right: 5.5rem;
   background-image: radial-gradient(#00d2ff, #2C3E50);
   z-index: 1000;
   transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1); }
+  @media (max-width: 56.25em) {
+    .navigation__background {
+      top: 3.5rem;
+      right: 3.5rem; } }
+  @media (max-width: 37.5em) {
+    .navigation__background {
+      top: 2.5rem;
+      right: 2.5rem; } }
 
 .navigation__nav {
   height: 100vh;

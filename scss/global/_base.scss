@@ -11,9 +11,45 @@
 }
 
 html{
-  font-size:62.5%;
+  // this defines what 1 rem is!
+  font-size:62.5%; // 10px
+
+  @include respond(big-desktop) {
+    font-size: 75%; // 1rem =12px
+  }
+
+  @include respond(desktop) {
+    font-size: 62.5%;
+  }
+
+  @include respond(tab-land) {
+    font-size: 56.25%; //1rem = 9px
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%; // 1rem = 8px (8/16) = 50%
+  }
+
+  @include respond(phone) {
+    font-size: 45%;
+  }
+
 }
 
 body {
   box-sizing: border-box;
+  padding: 2rem;
+  @include respond(tab-port) {
+    padding: 0;
+  }
+  /* Using inheritance of CSS */
+    font-family: Lato, monospace;
+    font-weight: 400;
+    /*font-size: 120%;*/
+    line-height: 1.7;
+    color: $font-color;
+    background: radial-gradient(
+                    rgba($background-color-light, 0.4),
+                    rgba($background-color-dark, 0.2));
+
 }
