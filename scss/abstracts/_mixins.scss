@@ -36,6 +36,12 @@ Breakpoint choices -- Phone/Tab-port/Tab-land/big-desktop
 */
 
 @mixin respond($breakpoint) {
+  @if($breakpoint == small-phone) {
+    @media(max-width: 30em)
+    {
+      @content
+    }
+  }
   @if($breakpoint == phone) {
       @media(max-width: 37.5em) // 600px
       {

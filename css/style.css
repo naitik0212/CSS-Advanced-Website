@@ -44,6 +44,9 @@ html {
   @media (max-width: 37.5em) {
     html {
       font-size: 45%; } }
+  @media (max-width: 30em) {
+    html {
+      font-size: 40%; } }
 
 body {
   box-sizing: border-box;
@@ -144,6 +147,9 @@ body {
       .headingPrimary--main {
         letter-spacing: 1rem;
         font-size: 5rem; } }
+    @media (max-width: 30em) {
+      .headingPrimary--main {
+        font-size: 3.5rem; } }
   .headingPrimary--sub {
     display: block;
     font-size: 2.5rem;
@@ -154,7 +160,11 @@ body {
     @media (max-width: 37.5em) {
       .headingPrimary--sub {
         letter-spacing: 0.2rem;
-        font-size: 2rem; } }
+        font-size: 2rem;
+        text-shadow: none; } }
+    @media (max-width: 30em) {
+      .headingPrimary--sub {
+        font-size: 1.6rem; } }
   .headingPrimary--Secondarysub {
     display: block;
     font-size: 2rem;
@@ -166,6 +176,9 @@ body {
       .headingPrimary--Secondarysub {
         letter-spacing: 0.2rem;
         font-size: 1.6rem; } }
+    @media (max-width: 30em) {
+      .headingPrimary--Secondarysub {
+        text-shadow: none; } }
 
 .heading-secondary {
   font-size: 3.5rem;
@@ -183,6 +196,9 @@ body {
   @media (max-width: 37.5em) {
     .heading-secondary {
       font-size: 2rem; } }
+  @media (max-width: 30em) {
+    .heading-secondary {
+      font-size: 1.6rem; } }
   .heading-secondary:hover {
     transform: skewX(2deg) skewY(1deg) scale(1.1);
     text-shadow: 0.5rem 1rem 1rem rgba(0, 0, 0, 0.3); }
@@ -231,6 +247,9 @@ body {
   background-color: #f7f7f7;
   padding: 25rem 0;
   margin-top: -15rem; }
+  @media (max-width: 56.25em) {
+    .section-about {
+      padding: 20rem 0; } }
 
 .section-features {
   margin-top: -10rem;
@@ -745,6 +764,9 @@ body {
     @media (max-width: 56.25em) {
       .row:not(:last-child) {
         margin-bottom: 5.5rem; } }
+    @media (max-width: 30em) {
+      .row:not(:last-child) {
+        margin-bottom: 3.5rem; } }
   .row [class^="col-"] {
     float: left; }
     .row [class^="col-"]:not(:last-child) {
@@ -753,6 +775,9 @@ body {
         .row [class^="col-"]:not(:last-child) {
           margin-right: 0;
           margin-bottom: 5.5rem; } }
+      @media (max-width: 30em) {
+        .row [class^="col-"]:not(:last-child) {
+          margin-bottom: 3.5rem; } }
     @media (max-width: 56.25em) {
       .row [class^="col-"] {
         width: 100% !important; } }
@@ -780,6 +805,9 @@ body {
   .footer__logo-box {
     text-align: center;
     padding: 5rem 0; }
+    @media (max-width: 56.25em) {
+      .footer__logo-box {
+        padding: 3rem 0; } }
   .footer__logo {
     width: 15rem;
     height: auto; }
