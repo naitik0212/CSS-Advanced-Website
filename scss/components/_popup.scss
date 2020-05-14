@@ -51,6 +51,9 @@
     opacity: 0;
     transform: translate(-50%,-50%) scale(0.2);
     transition: all 0.5s 0.2s;
+    @include respond(phone) {
+      display: block;
+    }
 
   }
 
@@ -58,6 +61,11 @@
     width: 33.33%;
     display: table-cell;
     //float: left;
+    @include respond(phone) {
+      display: inline-block;
+      width: 100%;
+      padding: 1.5rem 3rem;
+    }
   }
 
   &__right {
@@ -66,11 +74,36 @@
     vertical-align: middle;
     padding: 3rem 5rem;
     //float: right;
+    @include respond(tab-land) {
+      padding: 2rem 4rem;
+    }
+    @include respond(tab-port) {
+      padding: 2rem 4rem;
+    }
+    @include respond(phone) {
+      display: inline-block;
+      width: 100%;
+      padding: 1.5rem 3rem;
+    }
   }
 
   &__img {
     display: block;
     width: 100%;
+
+    @include respond(tab-land) {
+      padding: 4rem 0 2rem 4rem;
+    }
+    @include respond(tab-port) {
+      padding: 8rem 0 4rem 4rem;
+    }
+
+    @include respond(phone) {
+      padding: 4rem 2rem 0 2rem;
+      width: 45%;
+      display: inline-block;
+
+    }
   }
 
   &__text {
