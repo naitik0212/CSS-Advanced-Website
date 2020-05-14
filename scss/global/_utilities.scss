@@ -8,12 +8,24 @@
 
 .u-margin-bottom-s {
   margin-bottom: 2rem;
+  @include respond(phone) {
+    margin-bottom: 1.5rem;
+  }
 }
 
 .u-margin-bottom-m {
   margin-bottom: 4rem;
+  @include respond(phone) {
+    margin-bottom: 2.5rem;
+  }
 }
 
 .u-margin-bottom-l {
   margin-bottom: 8rem;
+  @include respond(phone) {
+    margin-bottom: 4rem;
+  }
+  @include respond(small-phone) {
+    margin-bottom: 3rem;
+  }
 }

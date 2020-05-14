@@ -6,14 +6,18 @@
 
 
   @include respond(tab-port) {
-       max-width: 60rem;
-       padding: 0 3rem;
+       max-width: 65rem;
+       padding: 0 2rem;
 
   }
 
   @include respond(phone) {
-    max-width: 45rem;
+    max-width: 55rem;
     padding: 0 1rem;
+  }
+
+  @include respond(small-phone) {
+    max-width: 50rem;
   }
 
 
@@ -35,6 +39,7 @@
 
     &:not(:last-child){
       margin-right: $gutter-horizontal;
+
       @include respond(tab-port) {
         margin-right: 0;
         margin-bottom: $gutter-vertical-small;
