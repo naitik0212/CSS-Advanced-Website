@@ -55,3 +55,9 @@ body {
                     rgba($background-color-dark, 0.2));
 
 }
+
+
+::selection {
+  background-color: $background-color-light;
+  color: $color-white;
+}
