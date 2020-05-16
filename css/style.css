@@ -500,6 +500,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 1rem;
     overflow: hidden;
@@ -626,15 +627,21 @@ body {
       padding: 2rem 2rem 2rem 4rem;
       transform: skewX(-3deg); } }
   .story__shape {
+    float: left;
     width: 15rem;
     height: 15rem;
-    float: left;
     background-color: white;
     -webkit-shape-outside: circle(50% at 50% 50%);
     shape-outside: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%);
+    overflow: hidden;
+    border-radius: 50%;
     transform: translateX(-3rem) skewX(12deg);
     position: relative; }
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+      .story__shape {
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        border-radius: 0; } }
     @media (max-width: 56.25em) {
       .story__shape {
         transform: translateX(-2rem) skewX(6deg); } }
@@ -785,6 +792,11 @@ body {
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s; }
+  @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+    .popup {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      background-image: radial-gradient(#000, rgba(44, 62, 80, 0.3) 40%, rgba(0, 0, 0, 0.3) 100%); } }
   .popup:target {
     opacity: 1;
     visibility: visible; }
@@ -873,11 +885,10 @@ body {
 /*Viewport height*/
 .profileHeader {
   /* 95% of the viewport */
-  height: 95vh;
+  height: 85vh;
   background: linear-gradient(to right bottom, rgba(0, 210, 255, 0.35), rgba(44, 62, 80, 0.4), rgba(255, 255, 255, 0.5)), url(../img/hero-small.jpg) center;
   background-size: cover;
   /*Coordinates of polygon: top left, top right, bottom right, bottom left*/
-  clip-path: polygon(0% 15%, 0 0, 15% 0%, 85% 0%, 100% 0, 100% 15%, 100% 85%, 70% 85%, 65% 100%, 35% 100%, 30% 85%, 0% 85%);
   position: relative;
   border-radius: 2rem;
   /*.profileHeader__logo:hover{*/
@@ -888,13 +899,18 @@ body {
   /*animation-name: smallMoveInLeft;*/
   /*animation-duration: 1s;*/
   /*}*/ }
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    .profileHeader {
+      height: 95vh;
+      -webkit-clip-path: polygon(0% 15%, 0 0, 15% 0%, 85% 0%, 100% 0, 100% 15%, 100% 85%, 70% 85%, 65% 100%, 35% 100%, 30% 85%, 0% 85%);
+      clip-path: polygon(0% 15%, 0 0, 15% 0%, 85% 0%, 100% 0, 100% 15%, 100% 85%, 70% 85%, 65% 100%, 35% 100%, 30% 85%, 0% 85%); } }
   @media (max-width: 56.25em) {
     .profileHeader {
       border-radius: 0; } }
   @media (max-width: 37.5em) {
     .profileHeader {
       clip-path: polygon(0% 0%, 100% 0, 100% 85vh, 0 100%); } }
-  @media (min-resolution: 192dpi) and (min-width: 600px), (min-width: 2000px) {
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), (min-width: 125em) {
     .profileHeader {
       background: linear-gradient(to right bottom, rgba(0, 210, 255, 0.35), rgba(44, 62, 80, 0.4), rgba(255, 255, 255, 0.5)), url(../img/hero.jpg) center; } }
   .profileHeader__logoBox {
