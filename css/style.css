@@ -328,6 +328,10 @@ body {
         width: 80%;
         padding: 3rem; } }
 
+.FlexBoxLayout {
+  text-align: center;
+  padding: 2rem; }
+
 .btn, .btn:link, .btn:visited {
   text-align: center;
   text-transform: uppercase;
