@@ -200,7 +200,6 @@
 }
 
 
-
 ////////////////////////////
 //Legal text
 
@@ -209,4 +208,129 @@
   color:var(--color-grey-light-4);
   text-align: center;
   padding: 2.5rem;
+}
+
+
+////////////////////////////
+//Gallery
+
+.gallery {
+  display: flex;
+
+  &__photo {
+    width: 100%;
+    display: block;
+  }
+}
+
+
+////////////////////////////
+//Overview
+.overview {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--color-grey-light-2);
+
+
+  &__heading {
+    font-size: 2.25rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 1.5rem 3rem;
+
+  }
+
+  &__stars {
+    // grows but the div occupies entire space -- flex:1;
+    // Creating the extra space between two elements within the flexbox
+    margin-right: auto;
+    //to avoid spacing between the flex container... other option is to use line height + font-size to 0 for an svg element
+    display: flex;
+  }
+
+  &__icon-star,
+  &__icon-location {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: var(--color-primary);
+  }
+
+  &__location {
+    font-size: 1.2rem;
+    display: flex;
+    vertical-align: middle;
+  }
+
+  &__icon-location {
+    margin-right: 1rem;
+  }
+
+  &__rating {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    margin-left: 3rem;
+    align-self: stretch;
+    padding: 0 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+  }
+
+
+  &__rating-average {
+    font-size: 2.5rem;
+    font-weight: 300;
+  }
+
+  &__rating-count {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+}
+
+
+
+////////////////////////////
+// Button inline
+
+.btn-inline {
+  border: none;
+  color: var(--color-primary-light);
+  font-size: inherit;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  display: inline-block;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    color: var(--color-grey-dark-1);
+  }
+
+  &:focus {
+    outline: none;
+    // infinite can be done
+    animation: pulsate 0.2s;
+  }
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.25);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
 }
