@@ -16,16 +16,17 @@ Grey dark 3: #999
 
 */
 :root {
-  --color-primary:  #eb2f64;
-  --color-primary-light: #FF3366;
-  --color-primary-dark: #BA265D;
+  --color-primary:  #0F2027;
+  --color-primary-light: #2C3E50;
+  --color-primary-dark: #2c5364;
   --color-grey-light-1: #faf9f9;
   --color-grey-light-2: #f4f2f2;
   --color-grey-light-3: #f0eeee;
   --color-grey-light-4: #ccc;
-  --color-grey-dark-1: #333;
-  --color-grey-dark-2: #777;
-  --color-grey-dark-3: #999;
+  --color-grey-dark-0: #5d6a82;
+  --color-grey-dark-1: #4b4b4b;
+  --color-grey-dark-2: #8b8b8b;
+  --color-grey-dark-3: #a5a5a5;
   --color-black: #000;
   --color-white: #fff;
   --shadow-dark: 0 3rem 6rem rgba(0 ,0 ,0 , 0.7)
@@ -81,7 +82,10 @@ body {
 
 .sidebar {
   flex: 0 0 18%;
-  background-color: var(--color-grey-dark-1); }
+  background-color: var(--color-grey-dark-0);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
 
 .hotel-view {
   flex: 1;
@@ -169,3 +173,47 @@ body {
     margin-right: 1rem; }
   .user-nav__user-name {
     font-weight: bold; }
+
+.side-nav {
+  font-size: 1.4rem;
+  list-style: none;
+  margin-top: 3.5rem; }
+  .side-nav__item {
+    position: relative; }
+    .side-nav__item:not(:last-child) {
+      margin-bottom: 0.5rem; }
+  .side-nav__item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    background-color: var(--color-primary);
+    transform: scaleY(0);
+    transition: transform 0.2s, background-color 0.1s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s; }
+  .side-nav__item:hover::before, .side-nav__item--active::before {
+    transform: scaleY(1);
+    width: 100%; }
+  .side-nav__item:active::before {
+    background-color: var(--color-primary-light); }
+  .side-nav__link:link, .side-nav__link:visited {
+    color: var(--color-grey-light-1);
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 1.5rem 3rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 2; }
+  .side-nav__icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    margin-right: 1rem;
+    fill: currentColor; }
+
+.legal {
+  font-size: 1.2rem;
+  color: var(--color-grey-light-4);
+  text-align: center;
+  padding: 2.5rem; }
