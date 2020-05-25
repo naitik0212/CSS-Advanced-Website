@@ -42,7 +42,13 @@ Grey dark 3: #999
 
   --color-black: #000;
   --color-white: #fff;
-  --shadow-dark: 0 3rem 6rem rgba(0 ,0 ,0 , 0.7)
+
+  --shadow-dark: 0 3rem 5rem rgba(0 ,0 ,0 , 0.6);
+  --shadow-light: 0 2rem 4rem rgba(0,0,0,0.3);
+
+  --line: 2px solid var(--color-grey-light-2);
+
+
 }
 
 * {
