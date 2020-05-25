@@ -16,10 +16,10 @@
 
     "watch:sass-2": "node-sass scss_2/main.scss css_2/style.css",
 
-    "compile:sass-2": "node-sass scss_2/main.scss css_2/style2.comp.css",
-    "prefix:css-2": "postcss --use autoprefixer -b 'last 10 versions' css_2/style.concat.css -o css/style.output.css",
-    "compress:css-2": "node-sass css/style.output.css css_2/style.css --output-style compressed",
-    "build:css-2": "npm-run-all compile:sass concat:css prefix:css compress:css"
+    "compile:sass-2": "node-sass scss_2/main.scss css_2/style.comp.css",
+    "prefix:css-2": "postcss --use autoprefixer -b 'last 15 versions' css_2/style.comp.css -o css_2/style.output.css",
+    "compress:css-2": "node-sass css_2/style.output.css css_2/style.css --output-style compressed",
+    "build:css-2": "npm-run-all compile:sass-2 prefix:css-2 compress:css-2"
   },
   "repository": {
     "type": "git",
