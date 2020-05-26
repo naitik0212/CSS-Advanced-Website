@@ -19,7 +19,17 @@
     "compile:sass-2": "node-sass scss_2/main.scss css_2/style.comp.css",
     "prefix:css-2": "postcss --use autoprefixer -b 'last 15 versions' css_2/style.comp.css -o css_2/style.output.css",
     "compress:css-2": "node-sass css_2/style.output.css css_2/style.css --output-style compressed",
-    "build:css-2": "npm-run-all compile:sass-2 prefix:css-2 compress:css-2"
+    "build:css-2": "npm-run-all compile:sass-2 prefix:css-2 compress:css-2",
+
+    "watch:sass-3": "node-sass scss_3/main.scss css_3/style.css",
+
+    "compile:sass-3": "node-sass scss_3/main.scss css_3/style.comp.css",
+    "prefix:css-3": "postcss --use autoprefixer -b 'last 15 versions' css_3/style.comp.css -o css_3/style.output.css",
+    "compress:css-3": "node-sass css_3/style.output.css css_3/style.css --output-style compressed",
+    "build:css-3": "npm-run-all compile:sass-3 prefix:css-3 compress:css-3",
+
+
+    "build:prod": "npm-run-all build:css build:css-2 build:css-3"
   },
   "repository": {
     "type": "git",

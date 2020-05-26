@@ -111,3 +111,17 @@
   text-align: center;
   padding: 2rem;
 }
+
+.btn--layout {
+  text-decoration: none;
+  &:not(:last-child){
+    margin-right: 2rem;
+  }
+
+  @include respond(phone) {
+    &:not(:last-child){
+      margin-right: 0;
+      margin-bottom: 2rem;
+    }
+  }
+}

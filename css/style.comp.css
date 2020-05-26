@@ -332,6 +332,15 @@ body {
   text-align: center;
   padding: 2rem; }
 
+.btn--layout {
+  text-decoration: none; }
+  .btn--layout:not(:last-child) {
+    margin-right: 2rem; }
+  @media only screen and (max-width: 37.5em) {
+    .btn--layout:not(:last-child) {
+      margin-right: 0;
+      margin-bottom: 2rem; } }
+
 .btn, .btn:link, .btn:visited {
   text-align: center;
   text-transform: uppercase;

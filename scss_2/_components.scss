@@ -637,3 +637,27 @@
   }
 
 }
+
+
+.otherLayouts {
+  padding: 3rem;
+}
+
+.btn-layout{
+  text-decoration: none;
+  padding: 2rem;
+
+  @media only screen and (max-width: $bp-small) {
+    display: flex;
+  }
+    &:not(:last-child) {
+    margin-right: 3rem;
+    @media only screen and (max-width: $bp-small) {
+      margin-right: 0;
+      margin-bottom: 2rem;
+    }
+  }
+
+
+
+}
