@@ -22,6 +22,7 @@
     "build:css-2": "npm-run-all compile:sass-2 prefix:css-2 compress:css-2",
 
     "watch:sass-3": "node-sass scss_3/main.scss css_3/style.css",
+    "devserver-3": "live-server --browser=firefox",
 
     "compile:sass-3": "node-sass scss_3/main.scss css_3/style.comp.css",
     "prefix:css-3": "postcss --use autoprefixer -b 'last 15 versions' css_3/style.comp.css -o css_3/style.output.css",
