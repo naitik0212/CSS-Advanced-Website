@@ -195,7 +195,7 @@ body {
     grid-column: 1/-1; }
 
 .gallery {
-  background-color: #B28451;
+  background-color: #aaa;
   grid-column: full-start / full-end;
   display: grid;
   grid-template-rows: repeat(8, 1fr);
