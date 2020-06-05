@@ -13,9 +13,18 @@
   grid-template-columns: minmax(min-content, max-content);
   justify-content: center;
 
-  overflow: hidden;
 
-  &__logo {
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: 1/-1;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 5rem;
+    padding-top: 4rem;
+  }
+
+
+    &__logo {
     background-image: linear-gradient(rgba($color-grey-light-1, 0.01), rgba($color-grey-light-2, 0.9), rgba($color-grey-light-1, 0.01));
     height: 4.5rem;
     border-radius: 1rem;
