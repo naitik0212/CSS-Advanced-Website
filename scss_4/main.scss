@@ -1,0 +1,56 @@
+/////////////////////////////
+// Initial Layout without grids
+
+.container {
+  background-color: #000;
+  margin: 30px auto;
+  padding: 30px;
+  display: grid;
+  grid-template-rows: 4rem  minmax(6rem, 10rem) 1fr 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+}
+
+.item {
+  color: #fff;
+  font-family: sans-serif;
+
+  &--1 {
+    background-image: linear-gradient(to right bottom, #2C3E50, #4CA1AF);
+    grid-column: 1/-1;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+  }
+
+
+  &--2 {
+    background-image: linear-gradient(to right bottom, #dfe209, #ffa781);
+  }
+
+
+  &--3 {
+    background-image: linear-gradient(to right bottom, #FDC830, #F37335);
+  }
+
+
+  &--4 {
+    background-image: linear-gradient(to right bottom, #EB5757, #F37335);
+  }
+
+
+  &--5 {
+    background-image: linear-gradient(to right bottom, #FFE000, #799f0c);
+  }
+
+
+  &--6 {
+    background-image: linear-gradient(to right bottom, #c31432, #240b36);
+    grid-column: 1/4;
+  }
+
+  &--7 {
+    background-image: linear-gradient(to right bottom, #2C3E50, #FFFFFF);
+    grid-column: 1/-1;
+  }
+}
