@@ -1,22 +1,38 @@
 /////////////////////////////
 // Initial Layout without grids
+* ,
+*::before,
+*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
 
 .container {
-  background-color: #000;
-  margin: 30px auto;
-  padding: 30px;
+  background-color: #fff;
   display: grid;
-  grid-template-rows: 4rem  minmax(6rem, 10rem) 1fr 2rem;
+  grid-template-rows: 6rem  minmax(6rem, 20rem) 1fr minmax(8rem, min-content);
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 2rem;
+  // TODO: define grid layout for smaller width
+}
+
+.close {
+  font-size: 2rem;
+  color: #060606;
+  text-decoration: none;
+  padding: 0.5rem;
 }
 
 .item {
-  color: #fff;
+  color: #060606;
   font-family: sans-serif;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
 
-  &--1 {
-    background-image: linear-gradient(to right bottom, #2C3E50, #4CA1AF);
+
+&--1 {
+    background-image: linear-gradient(to right bottom, #d6d6d6, #FFFFFF);
     grid-column: 1/-1;
     justify-content: space-between;
     display: flex;
@@ -25,32 +41,75 @@
 
 
   &--2 {
-    background-image: linear-gradient(to right bottom, #dfe209, #ffa781);
+    background-image: linear-gradient(to right bottom, #d6d6d6, #FFFFFF);
   }
 
 
   &--3 {
-    background-image: linear-gradient(to right bottom, #FDC830, #F37335);
+    background-image: linear-gradient(to right bottom, #d6d6d6, #FFFFFF);
   }
 
 
   &--4 {
-    background-image: linear-gradient(to right bottom, #EB5757, #F37335);
+    background-image: linear-gradient(to right bottom, #d6d6d6, #FFFFFF);
   }
 
 
   &--5 {
-    background-image: linear-gradient(to right bottom, #FFE000, #799f0c);
+    background-image: linear-gradient(to right bottom, #d6d6d6, #FFFFFF);
   }
 
 
   &--6 {
-    background-image: linear-gradient(to right bottom, #c31432, #240b36);
+    background-image: linear-gradient(to right bottom, #d6d6d6, #FFFFFF);
     grid-column: 1/4;
   }
 
   &--7 {
-    background-image: linear-gradient(to right bottom, #2C3E50, #FFFFFF);
     grid-column: 1/-1;
+    background-color: #1d3b57;
+    padding: 1.5rem;
   }
 }
+
+
+.nav {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(15rem, 1fr));
+  grid-gap:2rem;
+  align-items: center;
+  color: white;
+  background-color: #1d3b57;
+
+  &__link:link,
+  &__link:visited{
+    font-size: 1.6rem;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1.5rem;
+    display: block;
+    background-color: rgba(black, 0.05);
+    transition: all 0.2s;
+  }
+
+  &__link:hover,
+  &__link:active{
+    color: white;
+    background-color: rgba(black, 0.5);
+    transform: translateY(-0.5rem);
+  }
+}
+
+.copyright {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.4rem;
+  color: #aaa;
+  text-align: center;
+  background-color: #1d3b57;
+  padding-top: 1.5rem;
+
+}
+
