@@ -95,3 +95,24 @@ html {
   text-align: center;
   background-color: #1d3b57;
   padding-top: 1.5rem; }
+
+/* Sidebar */
+.sidebar {
+  display: flex;
+  justify-content: center;
+  grid-row: 2/4;
+  grid-column: 4/5; }
+
+.heading-3 {
+  text-align: center; }
+
+.realtors__list {
+  display: grid;
+  grid-template-columns: min-content max-content;
+  grid-column-gap: 2rem;
+  grid-row-gap: 4rem;
+  align-items: center; }
+
+.realtors__img {
+  height: 6rem;
+  border-radius: 50%; }
