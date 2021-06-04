@@ -8,16 +8,17 @@
   box-sizing: inherit;
 }
 
-
-.container {
-  background-color: #fff;
-  display: grid;
-  grid-template-rows: 6rem  minmax(6rem, 20rem) minmax(min-content, max-content) 6rem;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 2rem;
-  // height: 1400px;
-  // TODO: define grid layout for smaller width
+html {
+  box-sizing: border-box;
 }
+
+  .container-1 {
+    background-color: #fff;
+    display: grid;
+    grid-template-rows:  6rem minmax(min-content,max-content) minmax(min-content,max-content) 8rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+  }
 
 .close {
   font-size: 2rem;
@@ -32,6 +33,25 @@
   margin: 0.5rem;
 }
 
+.feature {
+  display: grid;
+  grid-template-columns: min-content 1fr; //width of svg, remaining part
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 2.5rem;
+  padding: 1rem;
+
+  &__icon {
+    fill: blue;
+    width: 4.5rem;
+    height: 4.5rem;
+    grid-row: 1/ span 2;
+
+  }
+
+  &__text {
+    font-size: 1.2rem;
+  }
+}
 
 .item {
   color: #060606;
