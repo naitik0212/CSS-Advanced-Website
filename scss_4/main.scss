@@ -15,7 +15,7 @@ html {
   .container-1 {
   background-color: #fff;
   display: grid;
-  grid-template-rows:  6rem minmax(6rem, 8rem) minmax(min-content,max-content) 8rem;
+  grid-template-rows:  6rem minmax(min-content,max-content) minmax(min-content,max-content) 8rem;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 2rem;
 }
@@ -40,7 +40,7 @@ html {
   grid-column-gap: 2.5rem;
 
   &__icon {
-    fill: #ff4d59;
+    fill: blue;
     width: 4.5rem;
     height: 4.5rem;
     grid-row: 1/ span 2;
