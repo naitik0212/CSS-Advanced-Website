@@ -12,9 +12,10 @@
 .container {
   background-color: #fff;
   display: grid;
-  grid-template-rows: 6rem  minmax(6rem, 20rem) 1fr minmax(8rem, min-content);
+  grid-template-rows: 6rem  minmax(6rem, 20rem) minmax(min-content, max-content) 6rem;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 2rem;
+  // height: 1400px;
   // TODO: define grid layout for smaller width
 }
 
@@ -121,6 +122,15 @@
 }
 
 /* Sidebar */
+.sidebar {
+  display: flex;
+  justify-content: center;
+  grid-row: 2/4;
+  grid-column: 4/5;
+}
+.heading-3 {
+  text-align: center;
+}
 .realtors__list {
   display: grid;
   grid-template-columns: min-content max-content;
