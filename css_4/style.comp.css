@@ -8,18 +8,18 @@
 html {
   box-sizing: border-box; }
 
-.container-1 {
+.container {
   background-color: #fff;
   display: grid;
   grid-template-rows: 6rem minmax(min-content, max-content) minmax(min-content, max-content) 8rem;
-  grid-template-columns: repeat(4, minmax(min-content, max-content));
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 2rem; }
   @media only screen and (max-width: 62.5em) {
-    .container-1 {
+    .container {
       grid-template-rows: 6rem repeat(3, minmax(min-content, max-content)) 8rem;
       grid-template-columns: repeat(3, minmax(min-content, max-content)); } }
   @media only screen and (max-width: 50em) {
-    .container-1 {
+    .container {
       grid-template-rows: 6rem repeat(5, minmax(min-content, max-content)) 8rem;
       grid-template-columns: 1fr; } }
 
