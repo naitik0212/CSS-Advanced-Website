@@ -1,12 +1,13 @@
 /////////////////////////////
-// Initial Layout without grids
-* ,
+// Final Layout with grids
+*,
 *::before,
-*::after{
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
 }
+
 // Responsive breakpoints
 $bp-largest: 75em; //1200px
 $bp-large: 62.5em; //1000px
@@ -17,133 +18,82 @@ html {
   box-sizing: border-box;
 }
 
-  .container {
-  background-color: #fff;
+%base-card-style {
+  border-radius: 0.25rem;
+  background-color: #f9f7f6;
+  margin:1rem;
+}
+
+.container-1 {
   display: grid;
-  grid-template-rows:  6rem minmax(min-content,max-content) minmax(min-content,max-content) 8rem;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 6rem minmax(min-content, max-content) minmax(min-content, max-content) 8rem;
+  grid-template-columns: repeat(4, minmax(min-content, 1fr));
   grid-gap: 2rem;
 
-    @media only screen and (max-width: $bp-large)  {
-      grid-template-rows: 6rem repeat(3, minmax(min-content,max-content)) 8rem;
-      grid-template-columns: repeat(3, minmax(min-content,max-content));
-    }
-
-    @media only screen and (max-width: $bp-medium)  {
-      grid-template-rows: 6rem repeat(5, minmax(min-content,max-content)) 8rem;
-      grid-template-columns:1fr;
-
-    }
-
-}
-
-.close {
-  font-size: 2rem;
-  color: #fff;
-  text-decoration: none;
-  padding: 0.5rem;
-}
-
-.container__button {
-  font-size: 1.5rem;
-  padding: 0.5rem;
-  margin: 0.5rem;
-  background-color: #4297A0;
-  color: white;
-  border: none;
-  border-radius: 2px;
-  cursor: pointer;
-}
-
-.container__button:hover {
-  background-color: #367b82;
-}
-
-.feature {
-  display: grid;
-  grid-template-columns: min-content 1fr; //width of svg, remaining part
-  grid-row-gap: 1.5rem;
-  grid-column-gap: 2.5rem;
-  padding: 1rem;
-
-  &__icon {
-    fill: #2F5061;
-    width: 4.5rem;
-    height: 4.5rem;
-    grid-row: 1/ span 2;
-    @media only screen and (max-width: $bp-medium) {
-      width: 2rem;
-      height: 2rem;
-    }
-
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-rows: 6rem repeat(3, minmax(min-content, max-content)) 8rem;
+    grid-template-columns: repeat(3, minmax(min-content, 1fr));
   }
 
-  &__text {
-    font-size: 0.8rem;
+  @media only screen and (max-width: $bp-small) {
+    grid-template-rows: 6rem repeat(5, minmax(min-content, max-content)) 8rem;
+    grid-template-columns: 1fr;
   }
+
+  background-color: #fff;
 }
 
 .item {
   color: #060606;
   font-family: sans-serif;
-  // box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0.4rem 0.3rem rgba(0, 0, 0, 0.2);
 
 
-&--1 {
-    // background-image: linear-gradient(to right bottom, #d6d6d6, #FFFFFF);
+
+  &--1 {
     grid-column: 1/-1;
-    justify-content: space-between;
-    display: flex;
-    align-items: center;
     background-color: #2F5061;
     color: #fff;
-    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
   }
 
 
   &--2 {
-    // background-image: linear-gradient(to right bottom, #d6d6d6, #FFFFFF);
-    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
-    border-radius: 2px;
-    background-color: #f9f7f6;
+    @extend %base-card-style;
   }
 
 
   &--3 {
-    // background-image: linear-gradient(to right bottom, #d6d6d6, #FFFFFF);
-    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
-    border-radius: 2px;
-    background-color: #f9f7f6;
+    @extend %base-card-style;
+
   }
 
 
   &--4 {
-    // background-image: linear-gradient(to right bottom, #d6d6d6, #FFFFFF);
-    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
-    border-radius: 2px;
-    background-color: #f9f7f6;
+    @extend %base-card-style;
   }
 
 
   &--5 {
-    // background-image: linear-gradient(to right bottom, #d6d6d6, #FFFFFF);
+    @extend %base-card-style;
     display: grid;
+    grid-row: 2/4;
+    grid-column: 4/5;
+
     @media only screen and (max-width: $bp-medium) {
-      grid-column: 1/-1;
+      grid-column: 1 / -1;
+      grid-row: 3/4;
     }
-    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
-    border-radius: 2px;
-    background-color: #f9f7f6;
+
+    @media only screen and (max-width: $bp-small) {
+      grid-row: 5/6;
+    }
   }
 
 
   &--6 {
-    // background-image: linear-gradient(to right bottom, #d6d6d6, #FFFFFF);
+    @extend %base-card-style;
     grid-column: 1/4;
-    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
-    border-radius: 2px;
-    background-color: #f9f7f6;
-    @media only screen and (max-width: $bp-medium)  {
+    @media only screen and (max-width: $bp-small) {
       grid-column: 1 / -1;
     }
   }
@@ -151,103 +101,33 @@ html {
   &--7 {
     grid-column: 1/-1;
     background-color: #2F5061;
-    padding: 2rem 0;
   }
 }
 
 
-.nav {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(15rem, 1fr));
-  grid-gap:2rem;
-  align-items: center;
-  color: white;
-  background-color: #2F5061;
-
-  &__link:link,
-  &__link:visited{
-    font-size: 1.6rem;
-    color: white;
-    text-decoration: none;
-    text-transform: uppercase;
-    text-align: center;
-    padding: 1.5rem;
-    display: block;
-    background-color: rgba(black, 0.05);
-    transition: all 0.2s;
-  }
-
-  &__link:hover,
-  &__link:active{
-    color: white;
-    background-color: rgba(black, 0.5);
-    transform: translateY(-0.5rem);
-  }
-}
-
-.copyright {
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 1.4rem;
-  color: #aaa;
-  text-align: center;
-  background-color: #2F5061;
-  padding: 1.5rem 0;
-
-}
-
-/* Sidebar */
-.sidebar {
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
-  grid-row: 2/4;
-  grid-column: 4/5;
-  @media only screen and (max-width: $bp-large)  {
-    grid-column: 1 / -1;
-    grid-row: 3/4;
-  }
-
-  @media only screen and (max-width: $bp-medium)  {
-    grid-row: 5/6;
-
-  }
+.header-content {
+  height: 8vh;
   padding: 2rem;
 }
-.heading-3 {
-  text-align: center;
-  padding-bottom: 1rem;
-}
-.realtors__list {
-  display: grid;
-  grid-template-columns: min-content max-content;
-  grid-column-gap: 2rem;
-  grid-row-gap: 4rem;
-  align-items: center;
-  @media only screen and (max-width: $bp-large) {
-    grid-template-columns: repeat(3,min-content max-content);
-  }
-  @media only screen and (max-width: $bp-medium) {
-    grid-template-columns: min-content max-content;
-  }
+
+.sub-content {
+  padding: 2rem;
+  height: 20vh;
 }
 
-.realtors__img {
-  height: 6rem;
-  border-radius: 50%;
-  @media only screen and (max-width: $bp-large) {
-    height: 3rem;
-  }
+.sidebar-content {
+  padding: 2rem;
 }
 
-.home {
-  padding: 1rem;
+.main-content {
+  padding: 2rem;
+  height: 60vh;
 }
 
-.main__img {
-  width: 100%;
+.footer-content {
+  padding: 2rem;
+  height: 10vh;
+  color: white;
 }
 
-.main__content {
- text-align: center;
-}
+
