@@ -565,5 +565,12 @@ body {
 .btn-layout {
   text-decoration: none;
   padding: 2rem; }
+  @media only screen and (max-width: 37.5em) {
+    .btn-layout {
+      display: flex; } }
   .btn-layout:not(:last-child) {
     margin-right: 3rem; }
+    @media only screen and (max-width: 37.5em) {
+      .btn-layout:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 2rem; } }
