@@ -25,20 +25,6 @@ html {
 }
 
 .container-1 {
-  display: grid;
-  grid-template-rows: 6rem minmax(min-content, max-content) minmax(min-content, max-content) 8rem;
-  grid-template-columns: repeat(4, minmax(min-content, 1fr));
-  grid-gap: 2rem;
-
-  @media only screen and (max-width: $bp-medium) {
-    grid-template-rows: 6rem repeat(3, minmax(min-content, max-content)) 8rem;
-    grid-template-columns: repeat(3, minmax(min-content, 1fr));
-  }
-
-  @media only screen and (max-width: $bp-small) {
-    grid-template-rows: 6rem repeat(5, minmax(min-content, max-content)) 8rem;
-    grid-template-columns: 1fr;
-  }
 
   background-color: #fff;
 }
@@ -51,7 +37,6 @@ html {
 
 
   &--1 {
-    grid-column: 1/-1;
     background-color: #2F5061;
     color: #fff;
   }
@@ -75,31 +60,14 @@ html {
 
   &--5 {
     @extend %base-card-style;
-    display: grid;
-    grid-row: 2/4;
-    grid-column: 4/5;
-
-    @media only screen and (max-width: $bp-medium) {
-      grid-column: 1 / -1;
-      grid-row: 3/4;
-    }
-
-    @media only screen and (max-width: $bp-small) {
-      grid-row: 5/6;
-    }
   }
 
 
   &--6 {
     @extend %base-card-style;
-    grid-column: 1/4;
-    @media only screen and (max-width: $bp-small) {
-      grid-column: 1 / -1;
-    }
   }
 
   &--7 {
-    grid-column: 1/-1;
     background-color: #2F5061;
   }
 }
